@@ -1,0 +1,47 @@
+{
+  "name": "dsh-omp-retry",
+  "version": "0.1.0",
+  "description": "OMP-style HTTP 429 retry policy for the DeepSeek Harness",
+  "license": "MIT",
+  "author": "Rinai-R",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rinai-R/dsh-omp-retry.git"
+  },
+  "homepage": "https://github.com/Rinai-R/dsh-omp-retry#readme",
+  "bugs": {
+    "url": "https://github.com/Rinai-R/dsh-omp-retry/issues"
+  },
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "retry",
+    "rate-limit",
+    "429",
+    "omp"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

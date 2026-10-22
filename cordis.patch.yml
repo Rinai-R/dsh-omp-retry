@@ -1,0 +1,9 @@
+# Installed bundle layer: append the OMP-compatible rate-limit retry listener
+# after the built-in dsh-llm-retry row from dsh-base. The listener prepends
+# itself at runtime, so row order does not affect 429 handling.
+- insert:
+    - id: omp-rate-limit-retry
+      name: dsh-omp-retry
+      config:
+        floorMs: 30000
+        maxDelayMs: 300000
