@@ -5,5 +5,6 @@
     - id: omp-rate-limit-retry
       name: dsh-omp-retry
       config:
+        maxRetries: 10
         floorMs: 30000
         maxDelayMs: 300000
