@@ -12,4 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - run: npm install
       - run: npm test
+      # The committed dist is what github: installs load; keep it in sync.
+      - run: git diff --exit-code -- dist

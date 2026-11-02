@@ -1,6 +1,11 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { apply, computeRateLimitDelay, retryPolicyKey } from '../index.js'
+import {
+  apply,
+  computeRateLimitDelay,
+  resolveConfig,
+  retryPolicyKey,
+} from '../dist/index.js'
 
 const policy = Object.freeze({
   mode: 'normal',
@@ -143,4 +148,17 @@ test('maxRetries: 0 disables the rate-limit listener', async () => {
 
 test('rejects a malformed maxRetries', () => {
   assert.throws(() => harness({ config: { maxRetries: -1 } }), /maxRetries/)
+})
+
+test('resolveConfig fills the thinking-block defaults', () => {
+  const resolved = resolveConfig()
+  assert.equal(resolved.maxRetries, 10)
+  assert.equal(resolved.floorMs, 30_000)
+  assert.equal(resolved.maxDelayMs, 300_000)
+  assert.deepEqual(resolved.thinkingBlock, {
+    maxRetries: 5,
+    initialDelayMs: 500,
+    maxDelayMs: 8_000,
+    jitterRatio: 0.25,
+  })
 })
