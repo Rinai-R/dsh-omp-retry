@@ -27,7 +27,7 @@ export type { ResolvedThinkingBlockRetryPolicy, ThinkingBlockRetryConfig, } from
 /** The bundle's Cordis plugin name; also the row id in `cordis.patch.yml`. */
 export declare const name = "omp-rate-limit-retry";
 /** Services this bundle reads. */
-export declare const inject: readonly ['agents', 'sessionProjections'];
+export declare const inject: readonly ["agents", "sessionProjections"];
 /** Raw plugin configuration, as written under the `cordis.patch.yml` row. */
 export interface PluginConfig {
     /** Rate-limit attempts per failed step. `0` disables the rate-limit policy. */

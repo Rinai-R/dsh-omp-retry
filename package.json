@@ -1,6 +1,6 @@
 {
   "name": "dsh-omp-retry",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "OMP-style retry policies for the DeepSeek Harness: 429 rate limits and thinking-block binding rejections",
   "license": "MIT",
   "author": "Rinai-R",
