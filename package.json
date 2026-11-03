@@ -1,6 +1,6 @@
 {
   "name": "dsh-omp-retry",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "OMP-style retry policies for the DeepSeek Harness: 429 rate limits and thinking-block binding rejections",
   "license": "MIT",
   "author": "Rinai-R",
@@ -45,12 +45,12 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "npm run build && node --test test/",
+    "test": "npm run build && node --test",
     "prepare": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "5.9.3"
   },
   "dsh": {
     "bundle": {
